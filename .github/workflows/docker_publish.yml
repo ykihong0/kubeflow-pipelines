@@ -17,18 +17,18 @@ jobs:
     - name: Login to DockerHub Registry
       run: echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
     - name: Build the Preprocess image
-      run: docker build ./boston_housing/preprocess_data --tag gnovack/boston_pipeline_preprocessing
+      run: docker build ./boston_housing/preprocess_data --tag yki041/boston_pipeline_preprocessing
     - name: Push the Preprocess image
-      run: docker push gnovack/boston_pipeline_preprocessing
+      run: docker push yki041/boston_pipeline_preprocessing
     - name: Build the Train image
-      run: docker build ./boston_housing/train --tag gnovack/boston_pipeline_train
+      run: docker build ./boston_housing/train --tag yki041/boston_pipeline_train
     - name: Push the Train image
-      run: docker push gnovack/boston_pipeline_train
+      run: docker push yki041/boston_pipeline_train
     - name: Build the Test image
-      run: docker build ./boston_housing/test --tag gnovack/boston_pipeline_test
+      run: docker build ./boston_housing/test --tag yki041/boston_pipeline_test
     - name: Push the Test image
-      run: docker push gnovack/boston_pipeline_test
+      run: docker push yki041/boston_pipeline_test
     - name: Build the Deploy image
-      run: docker build ./boston_housing/deploy_model --tag gnovack/boston_pipeline_deploy_model
+      run: docker build ./boston_housing/deploy_model --tag yki041/boston_pipeline_deploy_model
     - name: Push the Deploy image
-      run: docker push gnovack/boston_pipeline_deploy_model
+      run: docker push yki041/boston_pipeline_deploy_model
